@@ -1,0 +1,41 @@
+@use '../../assets/styles/variables' as *;
+// NOTE: overwriting wp defaults
+@media screen and (max-width: 600px) {
+  // stylelint-disable-next-line selector-max-id
+  #wpadminbar {
+    position: fixed;
+  }
+}
+
+flynt-component[name='NavigationMmenu'] {
+  @media (min-width: $breakpoint-tablet-horizontal) {
+    display: none;
+  }
+
+  .container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 100%;
+
+    .admin-bar & {
+      top: 46px;
+
+      @media (min-width: 783px) {
+        top: 32px;
+      }
+    }
+    
+    h2 {
+      margin: auto;
+    }
+  }
+
+  @import 'Partials/hamburger';
+}
+// Mmenu moves the nav out of the div and off canvas, so needs to be below closing bracket
+@import 'Partials/menu';

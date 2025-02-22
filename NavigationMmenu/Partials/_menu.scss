@@ -1,0 +1,31 @@
+nav.mm-menu {
+  // swapping mmenu css vars for FLynt ones
+  --mm-color-background: var(--color-background);
+  --mm-color-text: var(--color-text);
+  --mm-color-background-emphasis: var(--color-background-secondary):;
+  --mm-color-icon: var(--color-accent);
+  
+  text-align: left;
+  font-family: var(--font-family-heading);
+  display: none;
+  
+  &.mm-menu--opened {
+    display: block;
+    box-shadow: inset -3px 0 3px rgba(0, 0, 0,0.4);
+  }
+  
+  .current-menu-parent {
+    background: var(--color-background);
+  }
+}
+
+.mm-wrapper {
+  &.mm-wrapper--opened .mm-wrapper__blocker{
+    --mm-blocker-opacity-delay: 0.1s;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  &.mm-wrapper--position-left .mm-slideout,
+  &.mm-wrapper--position-right .mm-slideout {
+    transform: none;
+  }
+}

@@ -1,0 +1,15 @@
+<flynt-component name="NavigationMmenu" load:on="idle" load:on:media="(max-width: 1023px)">
+  <div class="container centerMaxWidthContainer">
+  <p>{{ site.name }}</p>
+
+    {# {% if menu %} #}
+      {% include 'Partials/_hamburger.twig' with { 'a11y': a11y } only %}
+    {# {% endif %} #}
+  </div>
+  <nav id="mmenu" aria-label="{{ __("Main", "flynt") }}">
+    {# {% if menu %} #}
+      {% include 'Partials/_menu.twig' with { 'items': menu.items } only %}
+    {# {% endif %} #}
+  </nav>
+</flynt-component>
+
